@@ -63,7 +63,7 @@ console.log(resultado) */
 
 /* Ejercicio 2 imprimir numeros impares de 1 a n usando while */
 
-const prompt =require('prompt-sync')();
+/* const prompt =require('prompt-sync')();
 let n = prompt('Ingresa el numero: ');
 n = parseInt(n)
 let numero=1;
@@ -73,5 +73,5 @@ let numero=1;
       console.log(numero);
     }
     numero++;
-  }
+  } */
 

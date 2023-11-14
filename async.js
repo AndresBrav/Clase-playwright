@@ -45,18 +45,18 @@ const promesa = new Promise(function(resolve, reject) {
     reject('Salio mal');
 });
 
-promesa.then(function(value) {
-    console.log(value);
-}).catch(function(resaon) {
-    console.log(resaon);
-});
+/* promesa.then(function(positivo) {
+    console.log(positivo);
+}).catch(function(mal) {
+    console.log(mal);
+}); */
 
 
-// function manejadorRespuesta(response) {
-//     console.log(response);
-// }
+function manejadorRespuesta(response) {
+    console.log(response);
+}
 
-// promesa.then(manejadorRespuesta);
+promesa.then(manejadorRespuesta);
 
 // fetch('https://pokeapi.co/api/v2/pokemon/ditto').then(function(response) {
 //     response.json().then(function(data) {
@@ -66,15 +66,15 @@ promesa.then(function(value) {
 //     console.log(error);
 // });
 
-// Async/Await
-// async function getDitto() {
-//    try {
-//        const response = await fetch('https://pokeapi.co/api/v2/pokemon/ditto');
-//        const data = await response.json();
-//        console.log(data);
-//    }  catch(error) {
-//         console.log(error);
-//    }
-// }
+//Async/Await
+async function getDitto() {
+   try {
+       const response = await fetch('https://pokeapi.co/api/v2/pokemon/ditto');
+       const data = await response.json();
+       console.log(data);
+   }  catch(error) {
+        console.log(error);
+   }
+}
 
-// getDitto();
+getDitto();

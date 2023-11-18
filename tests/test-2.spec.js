@@ -12,14 +12,24 @@ test("test", async ({ page }) => {
   await page.getByRole("link", { name: "Sample App" }).click();
   await page.getByRole("button", { name: "Log In" }).click();
   // await page.getByText('Invalid username/password').click();
+
+  // Espera un breve momento
+  await page.waitForTimeout(1000);
+
   // Espera a que aparezca el mensaje de error y verifica que sea visible
   const errorMessage = await page.waitForSelector(
     "text=Invalid username/password"
   );
 
+  // Espera un breve momento
+  await page.waitForTimeout(1000);
+
   // Verifica que el mensaje de error sea visible
   const isVisible = await errorMessage.isVisible();
   expect(isVisible).toBeTruthy();
+
+  // Espera un breve momento
+  await page.waitForTimeout(1000);
 
   // Obtén el color del mensaje de error
   const color = await errorMessage.evaluate((element) => {
@@ -27,7 +37,9 @@ test("test", async ({ page }) => {
     return styles.color;
   });
 
+  // Espera un breve momento
+  await page.waitForTimeout(1000);
+
   // Verifica que el color sea rojo
   expect(color).toBe("rgb(220, 53, 69)"); // Puedes ajustar esto según el formato específico de color que obtienes
 });
-

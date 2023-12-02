@@ -35,7 +35,9 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],ignoreHTTPSErrors:process.env.CI ? false : true },
+      use: { ...devices['Desktop Chrome'],
+      headless:false ,
+      ignoreHTTPSErrors:process.env.CI ? false : true },
     },
 
     // {
